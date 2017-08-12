@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Beautiful DropDown </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <style>
+      
+            .row1 {
+                padding-top: 0.5em; 
+                position: relative;
+                padding: 0px;
+             
+              }
+            .row1 img {
+                padding: 0.3em;
+                padding-top: 0em;
+               
+            }
+            .menu {
+                position: fixed;
+                background: white;
+                z-index: 10;
+                width: 100%;
+                margin-left: -15px;
+                padding: 0em;
+                height: 52px;
+                box-shadow: 1px 1px 5px  grey;
+                
+                
+            }
+           
+    
+            .row1 .navbar {
+            
+                float: right;
+               
+            }
+            
+            .row1 .navbar-nav {
+              
+                    
+            }
+            .row1 .navbar-nav>li>.a {
+                color: black;
+                font-family: 'PT Sans', sans-serif;
+                font-weight: normal;
+                text-align: right;
+                background-color: white;
+                padding-bottom: 0.5em;
+                letter-spacing: 1px;
+                border-bottom: 2px solid white;
+                text-align: center;
+                transition: 0.1s all linear;
+               
+            }  
+            .row1 .navbar-nav>li>.a:hover {
+                background-color: white;
+                color: #FF730D;
+                border-bottom: 2px solid #FF730D;
+            }
+            .row1 .free {
+                  background-color: #FF730D;
+                 border: 2px solid rgba(255,255,255,0.0);
+                color: floralwhite;
+                font-weight: normal;
+                padding-top: 0.5EM;
+                margin-top: 0.5em;
+                padding-bottom: 0.5EM;
+                
+                letter-spacing: 1px;
+                  
+                text-align: center;
+                transition: 0.1s all linear;
+                
+                
+            }
+            .row1 .free:hover {
+                 background-color:  #1E7AC3;
+                color: white;
+                 animation-name: change;
+                animation-duration: 0.25s;
+                
+                border: 2px solid rgba(255,255,255,0.0);
+            }
+            .icon-bar {
+                background-color: #FF730D;
+            }
+            .row2 {
+                background-image: url(img/bg5.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+            
+                padding-top: 8em;
+                padding-bottom: 8em;
+                
+              
+            }
+         .wrapper {
+              
+                  height: 0em;
+                width: 0em;
+                z-index: 9999;
+                overflow: hidden;
+                  margin-top: -0.2em;
+                position: absolute;
+                transition: 0.199s all linear;
+              
+                
+                
+            }
+            .wrapper .glyphicon {
+                color: #1E7AC3;
+            }
+            .wrapper ul {
+           
+               background: rgba(255,255,255,0.7);
+                   overflow: hidden;
+                border: 1px solid #1E7AC3;
+                margin-top: -0.4em;
+
+                
+            }
+            .wrapper ul li {
+              
+                margin-left: -40px;
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+                word-spacing: 0.2em;
+                padding-left: 0.2em;
+              
+            }
+            .wrapper .active {
+                background:#1E7AC3;
+                color: white;
+                padding: 0.5em;
+                margin-top: 0px;
+           
+            }
+     
+            .city:focus ~.wrapper {
+                height: 10em;
+                width: 20em;
+                visibility: visible;
+            }
+            
+         
+            
+            
+            
+            
+          
+            
+            
+            .city {
+                border-radius: 0px;
+                border-right: none;
+             border: none;
+                border-top: none;
+                border-left: none;   
+            }
+            .search {
+                border-radius: 0px;
+                  border-right: none;
+                      border: none;
+        
+                                border-top: none;
+               
+            }
+            .butt {
+                border-radius: 0px;
+                 font-family: 'Roboto', sans-serif;
+                background-color:  #FF730D;
+  
+                
+            }
+            
+            
+            
+            .city , .search , .butt{
+                
+             
+                height: 3em;
+                box-shadow: 0 0 10px grey;
+            }
+            
+            
+            
+            
+            
+            
+            .wrapper2 {
+              
+                  height: 0em;
+                width: 0em;
+                z-index: 9999;
+                overflow: hidden;
+                  margin-top: -0.2em;
+                position: absolute;
+                transition: 0.2s all linear;
+                
+                
+            }
+            .wrapper2 .glyphicon {
+                color: #1E7AC3;
+            }
+            .wrapper2 ul {
+           
+               background: rgba(255,255,255,0.7);
+                   overflow: hidden;
+                border: 1px solid #1E7AC3;
+                margin-top: -0.4em;
+
+                
+            }
+            .wrapper2 ul li {
+              
+                margin-left: -40px;
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+                word-spacing: 0.2em;
+                padding-left: 0.2em;
+              
+            }
+            .wrapper2 .active2 {
+                background:#1E7AC3;
+                color: white;
+                padding: 0.5em;
+                margin-top: 0px;
+           
+            }
+     
+              .search:focus ~.wrapper2 {
+                height: 10em;
+                width: 20em;
+            }
+            
+            
+            
+            
+            
+            .butt {
+                background:  #FF730D;
+                color: white;
+                transition: 0.1s all linear;
+               
+
+            }
+            .butt:hover{
+                animation-name: change;
+                animation-duration: 0.25s;
+                background: #1E7AC3;
+                color: white;
+            }
+            
+            
+@keyframes change {
+  0%{
+     background: linear-gradient(90deg, #1E7AC3 10%, #FF730D 50%);
+  }
+  
+    20%{
+     background: linear-gradient(90deg, #1E7AC3 20%, #FF730D 40%);
+  }
+  
+    40%{
+     background: linear-gradient(90deg, #1E7AC3 40%, #FF730D 30%);
+  }
+  
+    60%{
+     background: linear-gradient(90deg, #1E7AC3 60%, #FF730D 20%);
+  }
+    80%{
+     background: linear-gradient(90deg, #1E7AC3 80%, #FF730D 10%);
+  }
+   100%{
+     background: linear-gradient(90deg, #1E7AC3 100%, #FF730D 0%);
+  }
+}
+            
+            .covr {
+                            visibility:hidden;
+                    margin-top: -3px;
+                        
+                
+            }
+            
+            
+            
+            
+            .wrapp {
+                   border: 1px solid #1E7AC3;
+                    position: absolute;
+                z-index: 99999;
+                width: 100%;
+                background: rgba(255,255,255,0.9);
+                height: 200px;
+                overflow: scroll;
+    
+            }
+            .wrapp ul li {
+                margin-left: -2.9em;
+                text-align: center;
+                cursor: pointer;
+                 padding-top: 0.2em;
+                padding-bottom: 0.2em;
+                transition: 0.1s all linear;
+                   font-family: 'Roboto', sans-serif;
+            }
+            .wrapp ul li:hover {
+                
+                background: #1E7AC3;
+                color: white;
+            }
+            
+            .covr .head {
+                   background:#1E7AC3;
+                color: white;
+                padding: 0.5em;
+                margin-top: -5px;
+            }
+            
+            .covr .glyphicon {
+                color: #1E7AC3; 
+            }
+            
+            .covr2 {
+                            visibility:hidden;
+                    margin-top: -3px;
+               
+                        
+                
+            }
+            
+            
+            
+            
+            .wrapp2 {
+                   border: 1px solid #1E7AC3;
+                    position: absolute;
+                z-index: 99999;
+                width: 100%;
+                background: rgba(255,255,255,0.9);
+                height: 200px;
+                overflow: scroll;
+                
+    
+            }
+            .wrapp2 ul li {
+                margin-left: -2.9em;
+                text-align: center;
+                cursor: pointer;
+                 padding-top: 0.2em;
+                padding-bottom: 0.2em;
+                transition: 0.1s all linear;
+                   font-family: 'Roboto', sans-serif;
+            }
+            .wrapp2 ul li:hover {
+                
+                background: #1E7AC3;
+                color: white;
+            }
+            .wrapp2 ul  {
+               
+            }
+            .covr2 .head2 {
+                   background:#1E7AC3;
+                color: white;
+                padding: 0.5em;
+                margin-top: -5px;
+            }
+            
+            .covr2 .glyphicon {
+                color: #1E7AC3; 
+            }
+            
+           .line {
+                 font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+                font-size: 2em;
+                color: #FF730D;
+                letter-spacing: 1px;
+            }
+            
+      
+        </style>
+ 
+    <body>
+        
+
+        
+
+                <div class="row2 container-fluid">
+                    
+                    <div class="row line">
+                        <div class="col-md-12" style="text-align: center;">
+                        Find the lowest price on the right hotel for you
+                        </div>
+                    </div>
+                    
+                    <br />         
+                    <br /> 
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 "></div>
+                    <div class="col-md-2" style="padding: 0px;">
+                        
+                   
+                            
+                            
+                            <input type="text" class="city form-control" onkeyup="displaylist()" placeholder="Enter City" value="" id="cityText" />
+                        
+                        
+                        
+                            <div class="wrapper" id="wrapper">
+                                <span class="glyphicon glyphicon-triangle-top"></span>
+                                <ul>
+                                    <li class="active">Now you can Enter City Name</li>
+                                    <li><span class="glyphicon glyphicon-flag"></span>&nbsp;|&nbsp; School Landmark</li>
+                                  <li><span class="glyphicon glyphicon-map-marker"></span>&nbsp;|&nbsp; Locality or region</li> 
+                                    <li><span class="glyphicon glyphicon-phone"></span>&nbsp;|&nbsp; Project Builder</li>
+                                    
+                                </ul>
+                            </div>
+                        
+                        
+                        <div class="covr" id="covr">
+                         <span class="glyphicon glyphicon-triangle-top"></span>
+                            <div class="head">Select City</div>
+                        <div class="wrapp">
+                             
+                                
+                            <ul>
+                                <li data-mydata="Rishikesh" onclick="putData(this)">Rishikesh</li>
+                                <li data-mydata="Delhi" onclick="putData(this)">Delhi</li>
+                                <li data-mydata="Banglore" onclick="putData(this)">Banglore</li>
+                                <li data-mydata="Pune" onclick="putData(this)">Pune</li>
+                                <li data-mydata="Shyampur" onclick="putData(this)">Shyampur</li>
+                                <li data-mydata="Mumbai" onclick="putData(this)">Mumbai</li>
+                                <li data-mydata="Goa" onclick="putData(this)">Goa</li>
+                                <li data-mydata="London" onclick="putData(this)">London</li>
+                                <li data-mydata="USA" onclick="putData(this)">USA</li>
+                                <li data-mydata="Tamil Nadu" onclick="putData(this)">Tamil Nadu</li>
+                                <li data-mydata="Rajasthan" onclick="putData(this)">Rajasthan</li>
+                                <li data-mydata="America" onclick="putData(this)">America</li>
+                                
+                            </ul>
+                            
+                        </div>
+                           
+                        </div>    
+            
+                                      <script>
+                            function displaylist(){
+                              
+                                
+                                if(document.getElementById('cityText').value.length <= 3)
+                                {
+                                    document.getElementById('covr').style.visibility = "hidden";
+                                      document.getElementById('wrapper').style.visibility = "visible";
+                                }
+                                else {
+                                     document.getElementById('covr').style.visibility = "visible";
+                                     document.getElementById('wrapper').style.visibility = "hidden";
+                                    
+                                }
+                                
+                                
+                                
+                            }
+                                          
+                            function putData(data){
+                                
+                                var city = data.getAttribute('data-mydata');
+                                document.getElementById('cityText').value = "";
+                                document.getElementById('cityText').value = city;
+                                  document.getElementById('covr').style.visibility = "hidden";
+                                
+                                
+                            }
+                                          
+                                          
+                            function putData2(data){
+                               
+                               var office = data.getAttribute('data-mydata');
+                               document.getElementById('search').value = "";
+                               document.getElementById('search').value = office;
+                               document.getElementById('covr2').style.visibility = "hidden";
+                               
+                           }
+                                          
+                            function displayCompany(){
+                                
+                                if(document.getElementById('search').value.length <= 5){
+                                    
+                                    document.getElementById('covr2').style.visibility = "hidden";
+                                    document.getElementById('wrapper2').style.visibility = "visible";
+                                }
+                                else {
+                                    document.getElementById('covr2').style.visibility = "visible";
+                                    document.getElementById('wrapper2').style.visibility = "hidden";
+                                }
+                                
+                            }
+                                
+                                          
+                                          
+                            
+                                          
+                        </script> 
+           
+                        
+                        
+                    </div>
+                           <div class="col-md-5 " style="padding: 0px;">
+                        
+                        <div class="">
+                            
+                            
+                         
+                            <input type="text" onkeyup="displayCompany()" style="border-radius: 0px;" id="search" class="form-control search" placeholder="Enter Company Name ">
+                            
+                            
+                            
+                              <div class="wrapper2" id="wrapper2">
+                                <span class="glyphicon glyphicon-triangle-top"></span>
+                                <ul>
+                                    <li class="active2">Now you can Enter Company Name</li>
+                                    <li><span class="glyphicon glyphicon-flag"></span>&nbsp;|&nbsp; Inbussol Software Lmt. </li>
+                                  <li><span class="glyphicon glyphicon-map-marker"></span>&nbsp;|&nbsp; Apple Inc. or Microsoft Corp.</li> 
+                                    <li><span class="glyphicon glyphicon-phone"></span>&nbsp;|&nbsp; Project Builder</li>
+                                    
+                                </ul>
+                            </div>
+                            
+                            
+                            
+                            
+                                <div class="covr2" id="covr2">
+                         <span class="glyphicon glyphicon-triangle-top"></span>
+                            <div class="head2">Select City</div>
+                        <div class="wrapp2">
+                             
+                                
+                            <ul>
+                                <li data-mydata="Inbussol Software Lmt." onclick="putData2(this)">Inbussol Software Lmt.</li>
+                                <li data-mydata="Apple Inc. or Microsoft Corp." onclick="putData2(this)">Apple Inc. or Microsoft Corp.</li>
+                                <li data-mydata="InfoSys Private Ltd." onclick="putData2(this)">InfoSys Private Ltd.</li>
+                                <li data-mydata="Apple Inc. or Microsoft Corp." onclick="putData2(this)">Apple Inc. or Microsoft Corp.</li>
+                                <li data-mydata="Inbussol Software Lmt." onclick="putData2(this)">Inbussol Software Lmt.</li>
+                                <li data-mydata="InfoSys Private Ltd." onclick="putData2(this)">InfoSys Private Ltd.</li>
+                                <li data-mydata="Apple Inc. or Microsoft Corp." onclick="putData2(this)">Apple Inc. or Microsoft Corp.</li>
+                                <li data-mydata="Inbussol Software Lmt." onclick="putData2(this)">Inbussol Software Lmt.</li>
+                                <li data-mydata="InfoSys Private Ltd." onclick="putData2(this)">InfoSys Private Ltd.</li>
+                                <li data-mydata="Apple Inc. or Microsoft Corp." onclick="putData2(this)">Apple Inc. or Microsoft Corp.</li>
+                                <li data-mydata="Inbussol Software Lmt." onclick="putData2(this)">Inbussol Software Lmt.</li>
+                                <li data-mydata="InfoSys Private Ltd." onclick="putData2(this)">InfoSys Private Ltd.</li>
+                                
+                            </ul>
+                            
+                        </div>
+                           
+                        </div> 
+                            
+                            
+                            
+                          
+                        </div>
+                        
+                    </div>
+                           <div class="col-md-2" style="padding-left: 0px;">
+                        
+                        <div class="">
+                            
+                            
+                         
+                            <a href=""><input class="butt btn" type="button" value="Find Now"></a>
+                            
+                        </div>
+                        
+                    </div>
+                        <div class="col-md-1"></div>
+                      
+                        </div>
+                    </div> 
+                  </div>
+          
+        
+        
+
+    </body>
+           </head>
+</html>
